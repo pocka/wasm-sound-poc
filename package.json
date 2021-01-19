@@ -1,0 +1,16 @@
+{
+  "name": "wasm-poc",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "wasm-pack build --target web --out-dir ./public/wasm --out-name wasm",
+    "dev": "serve public --no-clipboard"
+  },
+  "files": [
+    "pkg"
+  ],
+  "devDependencies": {
+    "prettier": "^2.2.1",
+    "serve": "^11.3.2"
+  }
+}

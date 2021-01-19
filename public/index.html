@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8" />
+    <title>PoC</title>
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <script type="module">
+      import init, { Gate } from "./wasm/wasm.js";
+
+      async function run() {
+        const { memory } = await init();
+
+        const input = Float32Array.from([1.23, 2.34])
+        const output = new Float32Array(2)
+
+        const gate = Gate.new(2.0, 1.0)
+        console.log(gate.process(input, output, 0))
+        console.log(input)
+        console.log(output)
+      }
+
+      run();
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+</html>
